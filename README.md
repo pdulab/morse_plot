@@ -6,6 +6,17 @@ The goal of this project is to make it possible to plot data, or draw lines, wit
 
 ## Currently supported
 
+### Morse features
+
+The following features of Morse code are currently supported (across all Python based libraries/scripts):
+- Alphabet (not accentuated letters) and numbers
+- [Prosigns](https://en.wikipedia.org/wiki/Prosigns_for_Morse_code), by encasing the characters in `~`. For example, for the `OUT` prosign, made up of an `S` and a `K` without any pause between, use `~SK~`.
+
+Not currently supported:
+- Accentuated letters
+- Punctuation
+
+### Programming languages and software
 For now, the following programming languages and software are currently supported:
 - Python + Matplotlib, via the `morseplot` package (in the `./python` folder). For now, only plotting lines is supported. See the [Morseplot Python package](#morseplot-python-package) section for more details.
 - Inkscape (requires Python 3). See the [Inkscape strokes](#inkscape-trokes) section.
@@ -58,6 +69,8 @@ plt.morse_plot(x, y+1, morse_text='AB')
 ax = plt.gca()
 # Morse plot. We also added some extra args
 ax.morse_plot(x, y+2, morse_text='CD', label='Morse !', color='k') 
+# And finally a line with a prosign
+ax.morse_plot(x, y+3, morse_text='~SK~ SK ', label='~SK~ prosign vs SK')
 
 plt.legend()
 ```

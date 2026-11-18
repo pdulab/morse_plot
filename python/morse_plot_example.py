@@ -24,14 +24,16 @@ y = np.cos(x)
 plt.plot(x, y)
 
 # Plot with some morse code
-plt.morse_plot(x, y+1, morse_text='AB')
+plt.morse_plot(x, y+1, morse_text='AB ')
 
 
 # We can also do it from the axis !
 # Get the axis
 ax = plt.gca()
 # Morse plot. We also added some extra args
-ax.morse_plot(x, y+2, morse_text='CD', label='Morse !', color='k') 
+ax.morse_plot(x, y+2, morse_text='CD ', label='Morse !', color='k') 
+# And finally a line with a prosign
+ax.morse_plot(x, y+3, morse_text='~SK~ SK ', label='~SK~ prosign vs SK')
 
 
 plt.legend()

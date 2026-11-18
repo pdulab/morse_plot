@@ -53,30 +53,61 @@ def text_to_symbols(text, alphabet=alphabet_default):
     # Convert to lower case (no difference between upper an lower in Morse)
     text = text.lower()
     
+    
+    # Some variables init
     output = ''
     
     n_chars = len(text)
     
+    add_interletter = True
+    
+    inside_prosign = False
+    
+    
+    # Check if there is an odd number of `~`
+    # which means we have some messed up prosigns)
+    if text.count('~')%2 == 1:
+        raise ValueError("Cannot process prosigns: a tilda ('~') is missing " +
+                         "somewhere to close a prosign.")
+    
+    
     # Replace each letter by the corresponding symbols
     for i in range(n_chars):
         
-        # Add the Morse symbols corresponding to this char
-        output += alphabet[text[i]]
         
+        # Process prosign formatting
+        if text[i] == '~':
+            # Toggle the state when entering/exiting
+            inside_prosign = not(inside_prosign)
         
-        # Check if we need to add an interletter symbol
+        # Or Add the Morse symbols corresponding to this char
+        else:
+            output += alphabet[text[i]]
+            
         
-        add_interletter = True
+        # Whether to add an interletter pause or not
         
-        # Not needed if the current char is a space
-        if text[i]==' ':
-            add_interletter = False
-        
-        # If the next char is a space, we also don't need it
-        if (i+1<n_chars) and text[i+1] == ' ':
+        # Never add one inside of a prosign
+        if inside_prosign:
             add_interletter = False
             
-        # And finally add it if needed
+        # Outside prosign: might add one, depending on the char
+        # Note: when just exiting a prosign, we don't add a char (it's a '~'), 
+        # but we still add a space, which is desired.
+        else:
+            # Default
+            add_interletter = True
+            
+            # Not needed if the current char is a space
+            if text[i]==' ':
+                add_interletter = False
+            
+            # If the next char is a space, we also don't need it
+            if (i+1<n_chars) and text[i+1] == ' ':
+                add_interletter = False
+            
+        
+        # Finally, add the interletter pause if needed
         if add_interletter:
             output += alphabet['interletter']
 
