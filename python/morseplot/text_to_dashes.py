@@ -82,7 +82,10 @@ def text_to_symbols(text, alphabet=alphabet_default):
         
         # Or Add the Morse symbols corresponding to this char
         else:
-            output += alphabet[text[i]]
+            try:
+             output += alphabet[text[i]]
+            except:
+                raise KeyError("Character '{0}' not in Morse alphabet".format(text[i]))
             
         
         # Whether to add an interletter pause or not

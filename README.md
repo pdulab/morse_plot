@@ -9,12 +9,9 @@ The goal of this project is to make it possible to plot data, or draw lines, wit
 ### Morse features
 
 The following features of Morse code are currently supported (across all Python based libraries/scripts):
-- Alphabet (not accentuated letters) and numbers
-- [Prosigns](https://en.wikipedia.org/wiki/Prosigns_for_Morse_code), by encasing the characters in `~`. For example, for the `OUT` prosign, made up of an `S` and a `K` without any pause between, use `~SK~`.
+- The whole set of international Morse code characters from [Recommendation ITU-R M.1677-1 (10/2009)](https://www.itu.int/rec/R-REC-M.1677-1-200910-I/): letters, numbers, punctuation marks and miscellaneous signs.
+- [Prosigns](https://en.wikipedia.org/wiki/Prosigns_for_Morse_code) and digraphs, by encasing the characters in `~`. For example, for the `OUT` prosign, made up of an `S` and a `K` without any pause in between, use `~SK~`.
 
-Not currently supported:
-- Accentuated letters
-- Punctuation
 
 ### Programming languages and software
 For now, the following programming languages and software are currently supported:

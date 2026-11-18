@@ -6,7 +6,6 @@ Morse alphabet
 # Morse alphabet (extended)
 #
 # Translates characters to dots and dashes 
-# (only letters and numbers supported for now)
 # Taken from "Recommendation ITU-R M.1677-1 - International Morse Code" (10/2009 version)
 #
 # Compared to the real Morse code, this alphabet has been extended with two extra 'symbols' 
@@ -41,6 +40,8 @@ alphabet = { #Letters
             'x' : '-..-',
             'y' : '-.--',
             'z' : '--..',
+            # Accented letters
+            'é' : '..-..',
             # Numbers
             '1' : '.----',
             '2' : '..---',
@@ -52,6 +53,20 @@ alphabet = { #Letters
             '8' : '---..',
             '9' : '----.',
             '0' : '-----',
-            # Extra letters
+            # Punctuation and misc signs
+            '.' : '.-.-.-', # Dot
+            ',' : '--..--', # Comma
+            ':' : '---...', # Colon or division sign
+            '?' : '..--..', # Question mark
+            "'" : '.----.', # Apostrophe
+            '-' : '-..-.',  # Hyphen, dash, substraction sign
+            '/' : '-..-.',  # Fraction bar, division sign, slash
+            '(' : '-.--.',  # Opening parenthesis
+            ')' : '-.--.-', # Closing parenthesis
+            '"' : '.-..-.', # Quotation marks
+            '=' : '-...-',  # Double hyphen, equal sign
+            # 'x' : '-..-', # Multiplication. Same as x letter
+            '@' : '.--.-.', # Commerical at
+            # Extra symbols
             ' ' : ' ',
             'interletter': '_'}
