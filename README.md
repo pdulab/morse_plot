@@ -56,13 +56,19 @@ plt.morse_plot(x, y+1, morse_text='AB')
 # We can also do it from the axis !
 # Get the axis
 ax = plt.gca()
-# Plot with a different label and some color
+# Morse plot. We also added some extra args
 ax.morse_plot(x, y+2, morse_text='CD', label='Morse !', color='k') 
 
 plt.legend()
 ```
+
+
 And here is the result:
+
+
 ![morseplot python](./docs/examples_img/morseplot_py/figure.png)
+
+
 
 > [!WARNING]
 > Text with more than 5 characters does not work properly.
