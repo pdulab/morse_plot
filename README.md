@@ -81,7 +81,7 @@ And here is the result:
 
 
 > [!WARNING]
-> Text with more than 5 characters does not work properly.
+> Text with more than approx. 5 characters does not work properly.
 
 > [!NOTE]
 > For now, only plotting lines is supported. Patches and contours _might_ be added later on.
@@ -116,10 +116,9 @@ How to:
 
 ## Known limitations
 
-- Currently only letters and numbers are supported. Punctuation and prosigns (SOS, SK, ...) support should be added soon.
 - Morseplot Python package:
     - For now, only plotting lines is supported. Patches and contour _might_ be added later on.
-    - Morse text is limited to 5 characters.
+    - Morse text is limited to approx. 5 characters.
     - The line in the legend might be too short to show the whole Morse text.
 
 
